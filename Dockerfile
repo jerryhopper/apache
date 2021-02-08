@@ -47,6 +47,7 @@ RUN locale-gen $LANGUAGE && \
     dpkg-reconfigure -f noninteractive tzdata
 
 ADD rootfs /
+RUN chmod +x /start
 
 # Activate modules & configurations
 RUN a2enconf server-name && \
